@@ -1,2 +1,3 @@
-# terminal_application
-T1A3 
+### Link to my repository: https://github.com/Mira-cs/terminal_application
+
+
