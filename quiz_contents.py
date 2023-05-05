@@ -17,6 +17,14 @@ for row in datareader:
 num_questions_literature = len(literature_q) -1
 literature.close()
 
+art = open("art_questions.csv", "r")
+datareader = csv.reader(art)
+art_q = []
+for row in datareader:
+  art_q.append(row)
+num_questions_art = len(art_q) -1
+art.close()
+
 print(cs("Hello! Welcome to the Multiple Choice Quiz!","blue"))
-choose = input(cs("Please choose a topic for the quiz (movie or literature): ","orchid")).lower()
+choose = input(cs("Please choose from the three topics available by typing in movies,literature or art: ","orchid")).lower()
 
