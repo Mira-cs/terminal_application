@@ -32,78 +32,74 @@ count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
 q_number = 1
 while True:
-  choose = input(cs("Choose from the topics available by typing movies,literature or art: ","orchid")).lower()
+  choose = input(cs("\nChoose from the topics available by typing movies,literature or art and anything else to exit: \n","orchid")).lower()
   while choose == "movies" or choose == "literature" or choose == "art":
     if choose == "movies":
       for i in range(1,10):
-        print("Question ", i , "-", questions[q_number][0])
-        print("A", questions[q_number][1])
-        print("B ", questions[q_number][2])
-        print("C ", questions[q_number][3])
-        print("D ", questions[q_number][4])
-        answer = input("Answer (A to D), or a 'hint': ").upper()
-        if answer == questions[q_number][5]:
-          count += 1
-          print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
-          q_number += 1
-        elif answer in valid_options:
-          print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
-          q_number += 1 
-        else:
-          print(cs("Please provide a valid answer","yellow"))
-          break
+            print("Question ", i , "-", questions[q_number][0])
+            print("A", questions[q_number][1])
+            print("B ", questions[q_number][2])
+            print("C ", questions[q_number][3])
+            print("D ", questions[q_number][4])
+            answer = input("Answer (A to D), or a 'hint': ").upper()
+            if answer == questions[q_number][5]:
+              count += 1
+              print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
+              q_number += 1
+            elif answer in valid_options:
+              print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
+              q_number += 1 
+            else:
+              print(cs("Please provide a valid answer","yellow"))
+              break
     elif choose == "literature":
-      for i in range(1,11):
-        print("Question ", i , "-", literature_q[q_number][0])
-        print("A", literature_q[q_number][1])
-        print("B ", literature_q[q_number][2])
-        print("C ", literature_q[q_number][3])
-        print("D ", literature_q[q_number][4])
-        answer = input("Answer (A to D), or a 'hint': ").upper()
-        if answer == literature_q[q_number][5]:
-          count += 1
-          print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
-          q_number += 1
-        elif answer in valid_options:
-          print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
-          q_number += 1 
-        else:
-          print(cs("Please provide a valid answer","yellow"))
-          break
+        for i in range(1,10):
+            print("Question ", i , "-", literature_q[q_number][0])
+            print("A", literature_q[q_number][1])
+            print("B ", literature_q[q_number][2])
+            print("C ", literature_q[q_number][3])
+            print("D ", literature_q[q_number][4])
+            answer = input("Answer (A to D), or a 'hint': ").upper()
+            if answer == literature_q[q_number][5]:
+              count += 1
+              print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
+              q_number += 1
+            elif answer in valid_options:
+              print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
+              q_number += 1 
+            else:
+              print(cs("Please provide a valid answer","yellow"))
+              break
     elif choose == "art":
-      for i in range(1,11):
-        print("Question ", i , "-", art_q[q_number][0])
-        print("A", art_q[q_number][1])
-        print("B ", art_q[q_number][2])
-        print("C ", art_q[q_number][3])
-        print("D ", art_q[q_number][4])
-        answer = input("Answer (A to D), or a 'hint': ").upper()
-        if answer == art_q[q_number][5]:
-          count += 1
-          print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
-          q_number += 1
-        elif answer in valid_options:
-          print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
-          q_number += 1 
-        else:
-          print(cs("Please provide a valid answer","yellow"))
-          break
+        for i in range(1,10):
+            print("Question ", i , "-", art_q[i][0])
+            print("A", art_q[i][1])
+            print("B ", art_q[i][2])
+            print("C ", art_q[i][3])
+            print("D ", art_q[i][4])
+            answer = input("Answer (A to D), or a 'hint': ").upper()
+            if answer == art_q[i][5]:
+              count += 1
+              print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
+            elif answer in valid_options:
+              print(cs(f"\n Wrong,you have {count} correct answer(s)\n", "red"))
+            else:
+              print(cs("Please provide a valid answer","yellow"))
+              break
     if count >= 8:
-      print(f"Wow,good job, you have {count} correct answer(s)!\n")
-      yes_no=(input("Would you like to play again? (yes/no): ")).lower()
+      print(cs(f"\nWow,good job, you have {count} correct answer(s) out of {i} questions!\n", "purple"))
+      yes_no = input("Would you like to take quiz again?: ")
       if yes_no == "yes":
         continue
       else:
-        print("Thank you for playing!")
         break
     elif count <= 7:
-      print(f"You have {count} correct answer(s).Don't worry, you can always play again!")
-      yes_no=(input("Would you like to play again? (yes/no): ")).lower()
+      print(cs(f"\nYou have {count} correct answer(s) out of {i}.Don't worry, you can always play again!\n", "purple"))
+      yes_no = input("Would you like to take quiz again?: ")
       if yes_no == "yes":
         continue
       else:
-        print("Thank you for playing!")
         break
   else:
     print(cs("\nPlease provide a valid answer\n","yellow"))
-
+    break
