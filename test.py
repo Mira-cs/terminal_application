@@ -21,22 +21,23 @@ for row in datareader:
             'hint': row[6]
         }
       questions.append(question)
-num_questions = len(questions) - 1
+num_questions = len(questions) 
 movies.close()
 
 
 bar = FillingSquaresBar('Processing', max=num_questions)
 count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
-
-
+no_question = 0
+i = 0
 #  Outputs a welcome message and lets the user decide the topic
 print(cs("\nHello! Welcome to the Multiple Choice Quiz!","blue"))
 
 while True:
     choose = input("\nChoose from the topics available by typing movies, literature or art or anything else to exit:\n").lower()
     if choose == "movies":
-        for i, question in enumerate(questions):
+        while no_question < num_questions:
+            question = questions[no_question]
             prompt = inquirer.prompt([
                 inquirer.List('choice',
                               message=question['message'],
@@ -44,11 +45,25 @@ while True:
                               ),
             ])
             answer = prompt['choice']
-            if answer == questions[i]["correct_choice"]:
+            if answer == questions[no_question]["correct_choice"]:
               count += 1
-              print(f"Good job!You have {count} correct answer(s).\n")
+              no_question += 1
+              bar.next(1)
+              print(f"\nGood job!You have {count} correct answer(s).\n")
             elif answer != questions[i]['correct_choice']:
-              print(f"Wrong, the right answer is {questions[i]['correct_choice']}")
+              print(f"\nWrong, you have {count} correct answer(s).\n")
+              help = input("Would you like a hint? (yes/no): \n").lower()
+              if help == "yes":
+                print(questions[no_question]["hint"])
+                if no_question < 1:
+                  no_question = 1
+                elif i > 1:
+                  no_question = no_question - 1
+              elif help != "yes":
+                if no_question < 1:
+                  no_question = 1
+                elif i > 1:
+                  no_question = no_question - 1
 
               
 
