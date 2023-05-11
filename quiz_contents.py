@@ -2,6 +2,7 @@ import csv #importing files with quiz questions
 from stringcolor import cs #importing one module from stringcolor, to change the color of text
 from progress.bar import FillingSquaresBar #to show how much progress user made through the quiz
 import function #stored all functions in a different file (module)
+import questionary
 
 movies = open("movie_questions.csv", "r")
 datareader = csv.reader(movies)
@@ -28,7 +29,7 @@ num_questions = len(questions) - 1
 art.close()
 
 bar = FillingSquaresBar('Processing', max=num_questions)
-i = 1 
+i = 1
 count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
 
@@ -44,9 +45,7 @@ while True:
             function.qalist_movies(i,questions)
             answer = input("Answer (A to D), or a 'hint': ").upper()
             if answer == "HINT":
-                print(questions[i][6])
-                function.hint(i)
-                break
+                print("\n", {questions[i][6]})
             elif answer == questions[i][5]:
                 count += 1
                 print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
@@ -60,11 +59,11 @@ while True:
                 print(cs("Please provide a valid answer","yellow"))
                 break
     elif choose == "literature":
-        while i <= num_questions:
+        while i < num_questions:
             function.qalist_literature(i, literature_q)
-            answer = input("Answer (A to D), or a 'hint': ").lower()
-            if answer == "hint":
-              print(literature_q[i][6])
+            answer = input("Answer (A to D), or a 'hint': ").upper()
+            if answer == "HINT":
+              print("\n", {literature_q[i][6]})
               function.hint(i)
             elif answer == literature_q[i][5]:
               count += 1
@@ -72,11 +71,12 @@ while True:
               print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
               if i <num_questions:
                 bar.next(1)
-            elif answer != literature_q[i][5]:
+            elif answer in valid_options and answer != "HINT":
               print(cs(f"\n Wrong,the correct answer is {literature_q[i][5]}. You have {count} correct answer(s)\n", "red"))
+              i += 1
               if i <= num_questions:
                 bar.next(1)
-            else:
+            elif answer not in valid_options:
               print(cs("Please provide a valid answer","yellow"))
               break
     elif choose == "art":
@@ -84,8 +84,7 @@ while True:
             function.qalist_art(i,art_q)
             answer = input("Answer (A to D), or a 'hint': ").upper()
             if answer == "hint":
-              print(literature_q[i][6])
-              function.hint(i)
+              print("\n", {art_q[i][6]})
             elif answer == art_q[i][5]:
               count += 1
               print(cs(f"\n Correct,you have {count} correct answer(s)\n","green"))
