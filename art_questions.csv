@@ -1,10 +1,10 @@
-Question,OptionA,OptionB,OptionC,OptionD,Answer
-When was the first painting ever made?,20000 years ago,5000 years ago,42000 years ago,1000 years ago,C
-How many different forms of art are there?,7,15,11,5,A
-"Who is the author of the famous painting called ""The Last Supper""?",Michelangelo,Johannes Vermeer,Leonardo Da Vinci,Henri Matisse,C
-Which painting is Vincent Van Gogh the most famous for?,Sunrise,Water Lilies ,Nighthawks,The Starry Night,D
-Where is the biggest art museum located?,Beijing(China),Louvre(France),St. Petersburg(Russia),New York(USA),B
-What art style is Salvador Dali known for?,Abstract art,Surrealism,Fauvism,Cubism,B
-Who is one of the most popular Australian artists?,Tom Roberts,Norman Rockwell,Andy Warhol,Mary Cassatt,A
-Which movie is named after the famous painting?,Scream,Aftersun,Stillwater,The visit,A
-What is the name of the artwork that self-destructed  during the auction in 2018?,Balloon Girl,Flower Thrower,Game Changer,Love is in the Bin,D
+Question,OptionA,OptionB,OptionC,OptionD,Answer,Hint
+When was the first painting ever made?,20000 years ago,5000 years ago,42000 years ago,1000 years ago,C,Very long time ago
+How many different forms of art are there?,7,15,11,5,A,Between 5 and 11 
+"Who is the author of the famous painting called ""The Last Supper""?",Michelangelo,Johannes Vermeer,Leonardo Da Vinci,Henri Matisse,C,He is also the author of Mona Lisa
+Which painting is Vincent Van Gogh the most famous for?,Sunrise,Water Lilies ,Nighthawks,The Starry Night,D,Beautiful painting with lots of blue tones
+Where is the biggest art museum located?,Beijing(China),Louvre(France),St. Petersburg(Russia),New York(USA),B,It's where you would think it would be 
+What art style is Salvador Dali known for?,Abstract art,Surrealism,Fauvism,Cubism,B,"Described as depicting ""illogical scenes"""
+Who is one of the most popular Australian artists?,Tom Roberts,Norman Rockwell,Andy Warhol,Mary Cassatt,A,He was born in 1856 in the UK though
+Which movie is named after the famous painting?,Scream,Aftersun,Stillwater,The Visit,A,It's a horror movie
+What is the name of the artwork that self-destructed  during the auction in 2018?,Balloon Girl,Flower Thrower,Game Changer,Love is in the Bin,D,It didn't end up in a bin and was sold for high price
