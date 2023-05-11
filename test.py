@@ -49,14 +49,14 @@ while True:
               count += 1
               no_question += 1
               bar.next(1)
-              print(f"\nGood job!You have {count} correct answer(s).\n")
+              print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
             elif answer != questions[i]['correct_choice']:
-              print(f"\nWrong, you have {count} correct answer(s).\n")
-              help = input("Would you like a hint? (yes/no): \n").lower()
+              print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
+              help = input(cs("Would you like a hint? (yes/no): \n","pink")).lower()
               if help == "yes":
-                print(questions[no_question]["hint"])
+                print(cs(questions[no_question]['hint'],"yellow"))
                 if no_question < 1:
-                  no_question = 1
+                  no_question = 0
                 elif i > 1:
                   no_question = no_question - 1
               elif help != "yes":
@@ -64,7 +64,7 @@ while True:
                   no_question = 1
                 elif i > 1:
                   no_question = no_question - 1
-
+        no_question = 0
               
 
         
