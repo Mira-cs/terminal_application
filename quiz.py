@@ -3,7 +3,7 @@ from stringcolor import cs #importing one module from stringcolor, to change the
 from progress.bar import FillingCirclesBar #to show how much progress user made through the quiz
 import inquirer
 import pyfiglet
-from quiz_functions import user_input
+from quiz_functions import user_input,quiz_progressbar
 movies = open("movie_questions.csv", "r")
 datareader = csv.reader(movies)
 headers = next(datareader)
@@ -79,7 +79,6 @@ while True:
           raise ValueError("Invalid answer")
         no_question = 0
         if choose == "movies":
-          bar = FillingCirclesBar('Progress', max=num_questions)
           while no_question < num_questions:     
               question = questions[no_question]
               prompt = inquirer.prompt([
@@ -92,7 +91,7 @@ while True:
               if answer == questions[no_question]["correct_choice"]:
                   count += 1
                   no_question += 1
-                  bar.next(1)
+                  quiz_progressbar(no_question)
                   print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}\n", "green"))
               elif answer != questions[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
@@ -107,7 +106,6 @@ while True:
                   except ValueError as a:
                     print(a)
         if choose == "literature":
-          bar = FillingCirclesBar('Progress', max=num_questions)
           while no_question < num_questions:
                 literature_dict = literature_allq[no_question]
                 prompt = inquirer.prompt([
@@ -120,7 +118,7 @@ while True:
                 if answer== literature_allq[no_question]["correct_choice"]:
                   count += 1
                   no_question += 1
-                  bar.next(1)
+                  quiz_progressbar(no_question)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
                 elif answer != literature_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
@@ -135,7 +133,6 @@ while True:
                   except ValueError as a:
                     print(a)
         elif choose == "art":
-          bar = FillingCirclesBar('Progress', max=num_questions)
           while no_question < num_questions:
                 art_dict = art_allq[no_question]
                 prompt = inquirer.prompt([
@@ -148,7 +145,7 @@ while True:
                 if answer== art_allq[no_question]["correct_choice"]:
                   count += 1
                   no_question += 1
-                  bar.next(1)
+                  quiz_progressbar(no_question)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
                 elif answer != art_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
