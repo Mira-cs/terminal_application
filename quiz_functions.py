@@ -3,6 +3,9 @@ from progress.bar import FillingCirclesBar #to show how much progress user made 
 def user_input(topics,color):
   choose = input(cs(topics,color)).lower()
   return choose
+  
+  # choose = input(cs(topics,color)).lower()
+  # return choose
 
   
 
