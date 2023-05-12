@@ -1,6 +1,6 @@
 import csv #importing files with quiz questions
 from stringcolor import cs #importing one module from stringcolor, to change the color of text
-from progress.bar import FillingSquaresBar #to show how much progress user made through the quiz
+from progress.bar import FillingCirclesBar #to show how much progress user made through the quiz
 import function #stored all functions in a different file (module)
 import questionary
 
@@ -28,7 +28,7 @@ for row in datareader:
 num_questions = len(questions) - 1
 art.close()
 
-bar = FillingSquaresBar('Processing', max=num_questions)
+bar = FillingCirclesBar('Progress', max=num_questions)
 i = 1
 count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
