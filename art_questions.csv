@@ -1,10 +1,10 @@
 Question,OptionA,OptionB,OptionC,OptionD,Answer,Hint
-When was the first painting ever made?,20000 years ago,5000 years ago,42000 years ago,1000 years ago,C,Very long time ago
-How many different forms of art are there?,7,15,11,5,A,Between 5 and 11 
-"Who is the author of the famous painting called ""The Last Supper""?",Michelangelo,Johannes Vermeer,Leonardo Da Vinci,Henri Matisse,C,He is also the author of Mona Lisa
-Which painting is Vincent Van Gogh the most famous for?,Sunrise,Water Lilies ,Nighthawks,The Starry Night,D,Beautiful painting with lots of blue tones
-Where is the biggest art museum located?,Beijing(China),Louvre(France),St. Petersburg(Russia),New York(USA),B,It's where you would think it would be 
-What art style is Salvador Dali known for?,Abstract art,Surrealism,Fauvism,Cubism,B,"Described as depicting ""illogical scenes"""
-Who is one of the most popular Australian artists?,Tom Roberts,Norman Rockwell,Andy Warhol,Mary Cassatt,A,He was born in 1856 in the UK though
-Which movie is named after the famous painting?,Scream,Aftersun,Stillwater,The Visit,A,It's a horror movie
-What is the name of the artwork that self-destructed  during the auction in 2018?,Balloon Girl,Flower Thrower,Game Changer,Love is in the Bin,D,It didn't end up in a bin and was sold for high price
+When was the first painting ever made?,A.20000 years ago,B.5000 years ago,C.42000 years ago,D.1000 years ago,C.42000 years ago,Very long time ago
+How many different forms of art are there?,A.7,B.15,C.11,D.5,A.7,Between 5 and 11 
+"Who is the author of the famous painting called ""The Last Supper""?",A.Michelangelo,B.Johannes Vermeer,C.Leonardo Da Vinci,D.Henri Matisse,C.Leonardo Da Vinci,He is also the author of Mona Lisa
+Which painting is Vincent Van Gogh the most famous for?,A.Sunrise,B.Water Lilies ,C.Nighthawks,D.The Starry Night,D.The Starry Night,Beautiful painting with lots of blue tones
+Where is the biggest art museum located?,A.Beijing(China),B.Louvre(France),C.St. Petersburg(Russia),D.New York(USA),B.Louvre(France),It's where you would think it would be 
+What art style is Salvador Dali known for?,A.Abstract art,B.Surrealism,C.Fauvism,D.Cubism,B.Surrealism,"Described as depicting ""illogical scenes"""
+Who is one of the most popular Australian artists?,A.Tom Roberts,B.Norman Rockwell,C.Andy Warhol,D.Mary Cassatt,A.Tom Roberts,He was born in 1856 in the UK though
+Which movie is named after the famous painting?,A.Scream,B.Aftersun,C.Stillwater,D.The Visit,A.Scream,It's a horror movie
+Name of the artwork that self-destructed during the auction in 2018,A.Balloon Girl,B.Flower Thrower,C.Game Changer,D.Love is in the Bin,D.Love is in the Bin,It didn't end up in a bin and was sold for high price

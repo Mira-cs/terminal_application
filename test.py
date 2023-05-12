@@ -47,9 +47,9 @@ literature.close()
 art = open("art_questions.csv", "r")
 datareader = csv.reader(art)
 headers = next(datareader)
-art_q = []
+art_allq = []
 for row in datareader:
-        question_art = {
+        art_dict = {
             'message': row[0],
             'choices': [
                 row[1],
@@ -60,22 +60,23 @@ for row in datareader:
             'correct_choice': row [5],
             'hint': row[6]
         }
-        art_q.append(row)
-num_questions = len(art_q) 
+        art_allq.append(art_dict)
+num_questions = len(art_allq) 
 art.close()
 
 count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
 no_question = 0
 greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!", font ="digital")
+bar = FillingCirclesBar('Progress', max=num_questions)
 
 print(greeting)
 
 while True:
     choose = input(cs("Choose from the topics available by typing movies, literature or art or anything else to exit:\n", "yellow")).lower()
-    bar = FillingCirclesBar('Progress', max=num_questions)
     if choose == "movies":
-        while no_question < num_questions:
+      bar = FillingCirclesBar('Progress', max=num_questions)
+      while no_question < num_questions:
             question = questions[no_question]
             prompt = inquirer.prompt([
                 inquirer.List('choice',
@@ -99,10 +100,8 @@ while True:
               elif help != "yes":
                 if no_question < 1:
                   no_question = 0
-            no_question = 0
-            count = 0
-            del bar
     if choose == "literature":
+      bar = FillingCirclesBar('Progress', max=num_questions)
       while no_question < num_questions:
             literature_dict = literature_allq[no_question]
             prompt = inquirer.prompt([
@@ -127,9 +126,35 @@ while True:
               elif help != "yes":
                 if no_question < 1:
                   no_question = 0
-      no_question = 0
-      count = 0
-      del bar
+    if choose == "art":
+      bar = FillingCirclesBar('Progress', max=num_questions)
+      while no_question < num_questions:
+            art_dict = art_allq[no_question]
+            prompt = inquirer.prompt([
+            inquirer.List('choice',
+                          message = art_dict['message'],
+                          choices = art_dict['choices'],
+                          ),
+            ])
+            answer= prompt['choice']
+            if answer== art_allq[no_question]["correct_choice"]:
+              count += 1
+              no_question += 1
+              bar.next(1)
+              print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
+            elif answer != art_allq[no_question]['correct_choice']:
+              print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
+              help = input(cs("Would you like a hint? (yes/no): \n","pink")).lower()
+              if help == "yes":
+                print(cs(art_allq[no_question]['hint'],"yellow"))
+                if no_question < 1:
+                  no_question = 0
+              elif help != "yes":
+                if no_question < 1:
+                  no_question = 0
+    no_question = 0
+    count = 0
+    del bar
 
               
 
