@@ -27,10 +27,9 @@ movies.close()
 literature = open("literature_questions.csv", "r")
 datareader = csv.reader(literature)
 headers = next(datareader)
-literature_q = []
+literature_allq = []
 for row in datareader:
-  for row in datareader:
-      question_lit = {
+      literature_dict = {
             'message': row[0],
             'choices': [
                 row[1],
@@ -41,8 +40,8 @@ for row in datareader:
             'correct_choice': row [5],
             'hint': row[6]
         }
-      literature_q.append(row)
-num_questions = len(questions) - 1
+      literature_allq.append(literature_dict)
+num_questions = len(literature_allq) 
 literature.close()
 
 art = open("art_questions.csv", "r")
@@ -62,13 +61,13 @@ for row in datareader:
             'hint': row[6]
         }
         art_q.append(row)
-num_questions = len(questions) - 1
+num_questions = len(art_q) 
 art.close()
 
 count = 0
 valid_options = ["a","b","c","d","A","B","C","D"]
 no_question = 0
-greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!")
+greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!", font ="digital")
 
 print(greeting)
 
@@ -89,7 +88,7 @@ while True:
               count += 1
               no_question += 1
               bar.next(1)
-              print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
+              print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}\n", "green"))
             elif answer != questions[no_question]['correct_choice']:
               print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
               help = input(cs("Would you like a hint? (yes/no): \n","pink")).lower()
@@ -100,29 +99,29 @@ while True:
               elif help != "yes":
                 if no_question < 1:
                   no_question = 0
-        no_question = 0
-        count = 0
-        del bar
+            no_question = 0
+            count = 0
+            del bar
     if choose == "literature":
       while no_question < num_questions:
-            question_lit = literature_q[no_question]
+            literature_dict = literature_allq[no_question]
             prompt = inquirer.prompt([
             inquirer.List('choice',
-                              message=question_lit['message'],
-                              choices=question_lit['choices'],
-                              ),
+                          message = literature_dict['message'],
+                          choices = literature_dict['choices'],
+                          ),
             ])
-            answer = prompt['choice']
-            if answer == literature_q[no_question]["correct_choice"]:
+            answer= prompt['choice']
+            if answer== literature_allq[no_question]["correct_choice"]:
               count += 1
               no_question += 1
               bar.next(1)
               print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
-            elif answer != literature_q[no_question]['correct_choice']:
+            elif answer != literature_allq[no_question]['correct_choice']:
               print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
               help = input(cs("Would you like a hint? (yes/no): \n","pink")).lower()
               if help == "yes":
-                print(cs(literature_q[no_question]['hint'],"yellow"))
+                print(cs(literature_allq[no_question]['hint'],"yellow"))
                 if no_question < 1:
                   no_question = 0
               elif help != "yes":
