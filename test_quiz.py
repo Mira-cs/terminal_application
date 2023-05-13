@@ -3,10 +3,13 @@ from progress.bar import FillingCirclesBar
 
 # Testing to see if the program matches the input to the valid_options list items and returns the correct result
 def test_is_valid_input(monkeypatch):
+  # Mock user's input and set it to "movies"
   monkeypatch.setattr("builtins.input", lambda _: "movies")
+  # Assert that "movies" is a valid input
   assert is_valid_input("Please choose one topic (movies, art, literature, or exit): ", "yellow") == True
-
+  # Mock user's input and set it to "123"
   monkeypatch.setattr("builtins.input", lambda _: "123")
+  # Assert that "movies" is an invalid input
   assert is_valid_input("Please choose one topic (movies, art, literature, or exit): ", "yellow") == False
   
   monkeypatch.setattr("builtins.input", lambda _: "art")
