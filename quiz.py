@@ -25,7 +25,7 @@ for row in datareader:
                 row[3],
                 row[4]
       ],
-      'correct_choice': row [5],
+      'correct_choice': row[5],
       'hint': row[6]
     }
     questions.append(question)
@@ -78,8 +78,6 @@ no_question = 0
 # Storing the greeting message (styled with pyfiglet package) in the variable "greeting"
 greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!", font = "digital")
 goodbye = pyfiglet.figlet_format("Thank you!", font = "digital")
-# Storing the progress bar in the variable "bar"
-bar = FillingCirclesBar('Progress', max = num_questions)
 # Start of the app with greeting
 print(greeting)
 # While true loop will keep executing unless the user wishes to "exit"
