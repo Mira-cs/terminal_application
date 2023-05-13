@@ -149,7 +149,7 @@ while True:
                   count += 1
                   no_question += 1
                   quiz_progressbar(no_question,num_questions)
-                  print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
+                  print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}.\n", "green"))
               elif answer != literature_allq[no_question]['correct_choice']:
                   quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nWrong, you have {count} correct answer(s) out of {no_question}.\n", "red"))
@@ -180,7 +180,7 @@ while True:
                   count += 1
                   no_question += 1
                   quiz_progressbar(no_question,num_questions)
-                  print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
+                  print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}.\n", "green"))
               elif answer != art_allq[no_question]['correct_choice']:
                   quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nWrong, you have {count} correct answer(s) out of {no_question}.\n", "red")) 
