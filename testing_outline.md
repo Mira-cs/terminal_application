@@ -12,7 +12,7 @@ Since progress bar has to show user's progress after every question, it's crucia
 **Feature 1:**
 - Case 1: Enter a string "movie" as the input and check if the result is True, meaning it matches the options available
 - Case 2: Enter a string of random numbers as the input  and check if the result is False, meaning it doesn't match the options available   
-Each test case is tested in the same fashion as the above two. 
+Each test case is tested in the same fashion as the above two.   
 **Feature 2:**
 - Case 1: Checking if the bar starts out at the value of 0
 - Case 2: Asserting that the value goes up by one after calling the next()
