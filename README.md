@@ -32,7 +32,13 @@ User will be able to see what stage of the quiz they are at with the help of the
 ----------------------------------------------------------------
 ## Implementation Plan  
 #### Link to my Trello board:   
-#### https://trello.com/b/aIu5ZHc6/terminal-application-ip
+#### https://trello.com/b/aIu5ZHc6/terminal-application-ip  
+### Pictures of my Trello Board:  
+!['Trello board screenshot'](./trello.png)  
+!['Trello board screenshot'](./trello1.png) 
+!['Trello board screenshot'](./trello2.png) 
+!['Trello board screenshot'](./trello3.png)
+
 ### Feature 1: May 5th - May 8th   
 **Giving user an opportunity to choose a topic from three available:**  
 The quiz will give the user an opportunity to choose a topic for the quiz. To do so, I had to come up with three topics and 9 questions for each.I used Excel to write down all the questions,options, hints and correct answers. Then I exported it into a CSV files.CSV files are then added to the same folder as the quiz.py file. Every file is opened and iterated over, creating lists and dictionaries inside them."Valid_options" variable is created. It contains strings reprenseting the options users can choose from (topics) and in case of invalid input, an Error message will be displayed.
