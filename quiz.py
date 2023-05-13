@@ -115,11 +115,11 @@ while True:
                   # Progress Bar goes up with the increase of the number of the question
                   quiz_progressbar(no_question,num_questions)
                   # Outputting the message in the terminal, as well as the number of correct answers, in color green
-                  print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}\n", "green"))
+                  print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}.\n", "green"))
               # If answer doesnt match the correct one, print "Wrong" message
               elif answer != questions[no_question]['correct_choice']:
-                  print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   quiz_progressbar(no_question,num_questions)
+                  print(cs(f"\nWrong, you have {count} correct answer(s) out of {no_question}.\n", "red"))
                   # Try/except block to display an Error message in case of invalid input
                   try: 
                     help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
@@ -153,8 +153,8 @@ while True:
                   quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
               elif answer != literature_allq[no_question]['correct_choice']:
-                  print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   quiz_progressbar(no_question,num_questions)
+                  print(cs(f"\nWrong, you have {count} correct answer(s) out of {no_question}.\n", "red"))
                   try:
                     help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":
@@ -184,8 +184,8 @@ while True:
                   quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
               elif answer != art_allq[no_question]['correct_choice']:
-                  print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   quiz_progressbar(no_question,num_questions)
+                  print(cs(f"\nWrong, you have {count} correct answer(s) out of {no_question}.\n", "red")) 
                   try:
                     help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":

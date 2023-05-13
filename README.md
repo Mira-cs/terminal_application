@@ -4,7 +4,8 @@
 A gentle introduction to testing with pytest (no date) A Gentle Introduction to Testing with PyTest - Bas codes. Available at: https://bas.codes/posts/python-pytest-introduction  
 Hira, Z. (2023) Bash scripting tutorial – linux shell script and command line for Beginners, freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/  
 Working with CSV files in Python (2023) GeeksforGeeks. Available at: https://www.geeksforgeeks.org/working-csv-files-python/       
-Python enhancement proposals (no date) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/
+Python enhancement proposals (no date) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/   
+Shellcheck (no date) ShellCheck. Available at: https://www.shellcheck.net/  
 
 ----------------------------------------------------------------
 ## Style guide 
@@ -33,8 +34,8 @@ User will be able to see what stage of the quiz they are at with the help of the
 #### Link to my Trello board:   
 #### https://trello.com/b/aIu5ZHc6/terminal-application-ip
 ### Feature 1: May 5th - May 8th   
-**Giving user an opportunity to choose a topic from three available:**
-As I explained earlier, the quiz will give the user an opportunity to choose a topic for the quiz. To do so, I had to come up with three topics and questions for each.I used Excel to write down all the questions,options, hints and correct answers. Then I exported it into a CSV files.CSV files are then added to the same folder as the quiz.py file. Every file is opened and iterated over, creating lists and dictionaries inside them."Valid_options" variable is created. It contains strings reprenseting the options users can choose from (topics) and in case of invalid input, an Error message will be displayed.
+**Giving user an opportunity to choose a topic from three available:**  
+The quiz will give the user an opportunity to choose a topic for the quiz. To do so, I had to come up with three topics and 9 questions for each.I used Excel to write down all the questions,options, hints and correct answers. Then I exported it into a CSV files.CSV files are then added to the same folder as the quiz.py file. Every file is opened and iterated over, creating lists and dictionaries inside them."Valid_options" variable is created. It contains strings reprenseting the options users can choose from (topics) and in case of invalid input, an Error message will be displayed.
 
 **Checklist:**
 1) Creating three CSV files (movies,art,literature) with questions, options, correct answers and hints in them 
@@ -51,9 +52,9 @@ As I explained earlier, the quiz will give the user an opportunity to choose a t
 Everytime user makes correct choice their score increases. In case of incorrect choice program won't add it to the score. I created a count variable that starts out with the value of 0.Everytime the program iterates over the questions, if statement makes sure the choice made is the correct one, and if thats the case, it adds 1 to the count.The program will also display the score after every question.After the completion of the quiz, score resets to 0 again.It was made possible because the program matches correct answers to the one user chose.  
 **Checklist:**
 1) Iterate over the questions using loops as long as there are questions available (len(questions))
-2) Create a variable and assign value of 0 to it, 
-3) Make the program match the answer chosen with the correct answer with if statements (if answer = correct answer)
-4) Increase the score count if the answer is correct (if answer = correct answer: count += 1)
+2) Create a variable and assign value of 0 to it 
+3) Make the program match the answer chosen with the correct answer with if statements (if answer == correct answer)
+4) Increase the score count if the answer is correct (if answer == correct answer: count += 1)
 5) The count stays the same in case of the wrong choice 
 6) Count resets in the end of the quiz 
 
@@ -74,21 +75,30 @@ Users are able to see how far along they are in the quiz with the help of the Pr
 1) Install a package from Pypi
 2) Import progressbar package into the main file (not the entire package, but certain modules)
 3) Create a variable for the bar of a certain class and pass arguments to the function (message,length)
-4) Use appropriate function to make bar go up by 10% everytime the question is answered
-5) Reset the bar after the quiz is completed  
+4) Use appropriate function to make bar go up by 10% everytime the question is answered with 2 arguments, number of current question and total number of questions
+5) Make sure the progress bar is implemented after right/wrong answers correctly
+ 
 ----------------------------------------------------------------
 ## Help Documentation  
-This section of the file contains instructions on how to operate the Multiple Choice Quiz terminal application.
+This section of the file contains instructions on how to install and operate the Multiple Choice Quiz terminal application.
+
 ### Requirements
-Python 3 or higher is required  
-Git 
+
+Python 3.0 or higher is required  
+Git
+
 ### Installation Steps:
+
 1) Clone my GitHub repository from the following link:  
 https://github.com/Mira-cs/terminal_application
 2) Open terminal window
-3) Open the src folder 
+3) Use "cd" command to go to the root folder of the repository you downloaded
+3) Make sure you are running the following commands in virtual environment (to do so, run "source venv/bin/activate" command)
+3) Execute ./wrapper.sh file
+4) Follow the steps provided in the script
+5) Bash will run quiz.py file 
 
-### Dependencies  
+### List of Dependencies  
 
 blessed==1.20.0  
 colorama==0.4.6  
@@ -108,10 +118,11 @@ string-color==1.2.3
 toolz==0.12.0  
 wcwidth==0.2.6  
 
-### System/Hardware Requirements  
+### System/Hardware Requirements 
+- OS system that supports Python 3.0  or higher, that includes Windows, MacOs, Linux distributions
+- 70 MB of free disk space 
+- 512 MB of RAM
 
-
-### Command Line Arguments
 
 
 

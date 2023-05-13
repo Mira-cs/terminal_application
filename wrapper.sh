@@ -8,7 +8,7 @@ then
       if [[ $answer == [Yy] ]];
         then
           echo "Great,running the file..."
-          python3 testing.py
+          python3 quiz.py
        else
          read -p "Would you like all dependencies installed?(y/n): " answer
           if [[ $answer == [Yy] ]];
