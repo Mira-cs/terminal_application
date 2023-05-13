@@ -93,10 +93,11 @@ Git
 https://github.com/Mira-cs/terminal_application
 2) Open terminal window
 3) Use "cd" command to go to the root folder of the repository you downloaded
-3) Make sure you are running the following commands in virtual environment (to do so, run "source venv/bin/activate" command)
-3) Execute ./wrapper.sh file
-4) Follow the steps provided in the script
-5) Bash will run quiz.py file 
+4) Make sure you are running the following commands in virtual environment (to do so, run "source venv/bin/activate" command)
+5) Run the "chmod +x wrapper.sh" command in terminal 
+6) Execute "./wrapper.sh" file
+7) Follow the steps provided in the script 
+8) Bash will run quiz.py file 
 
 ### List of Dependencies  
 

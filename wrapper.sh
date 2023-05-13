@@ -23,8 +23,8 @@ then
           fi
       fi
     else
-        echo "Please install the Python later version on this website https://www.python.org/downloads/ " >&2
+        echo "Please install the Python 3.0 or later version on this website https://www.python.org/downloads/ " >&2
     fi 
 else
-    echo "You can install Python here https://www.python.org/downloads/" >&2
+    echo "You can install Python 3.0 here https://www.python.org/downloads/" >&2
 fi
