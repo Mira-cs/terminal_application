@@ -68,7 +68,7 @@ art.close()
 count = 0
 valid_options = ["movies","literature","art","exit"]
 no_question = 0
-greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!", font ="digital")
+greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!")
 bar = FillingCirclesBar('Progress', max=num_questions)
 print(greeting)
 
@@ -163,7 +163,6 @@ while True:
           break
         no_question = 0
         count = 0
-        del bar
       except ValueError as e:
         print(e)
        

@@ -22,10 +22,6 @@ for row in datareader:
 num_questions = len(questions) 
 movies.close()
 
-
-
-
-  
 #function used in the app to take users input(choosing a topic)
 def user_input(topics,color):
   choose = input(cs(topics,color)).lower()
