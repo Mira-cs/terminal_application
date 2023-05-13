@@ -87,7 +87,7 @@ while True:
     # Try/except statement for the invalid user input, to show the Error message in case it happens
     try:
         # Prompts user to input the topic they would like to take quiz about, color of the prompt yellow
-        choose = user_input("Please choose one topic (movies, art or literature), or exit: ", "yellow")
+        choose = user_input("\nPlease choose one topic (movies, art or literature), or exit: ", "yellow")
         # If input is invalid, show the error message
         if choose not in valid_options:
           raise ValueError("Invalid answer")
@@ -113,15 +113,16 @@ while True:
                   count += 1
                   no_question += 1
                   # Progress Bar goes up with the increase of the number of the question
-                  quiz_progressbar(no_question)
+                  quiz_progressbar(no_question,num_questions)
                   # Outputting the message in the terminal, as well as the number of correct answers, in color green
                   print(cs(f"\nGood job!You have {count} correct answer(s) out of {no_question}\n", "green"))
               # If answer doesnt match the correct one, print "Wrong" message
               elif answer != questions[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
+                  quiz_progressbar(no_question,num_questions)
                   # Try/except block to display an Error message in case of invalid input
                   try: 
-                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
+                    help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
                     # If user requests a hint, program will output it and go back to the question
                     if help == "yes":
                       print(cs(questions[no_question]['hint'], "yellow"))
@@ -132,7 +133,8 @@ while True:
                     else:
                       raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
-                    print(a)
+                    print(a) 
+                  quiz_progressbar(no_question,num_questions)                
         # Same procedure as in "movies" loop
         elif choose == "literature":
           while no_question < num_questions:
@@ -148,12 +150,13 @@ while True:
               if answer == literature_allq[no_question]["correct_choice"]:
                   count += 1
                   no_question += 1
-                  quiz_progressbar(no_question)
+                  quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
               elif answer != literature_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
+                  quiz_progressbar(no_question,num_questions)
                   try:
-                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
+                    help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":
                       print(cs(literature_allq[no_question]['hint'],"yellow"))
                     elif help == "no":
@@ -162,6 +165,7 @@ while True:
                       raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
                     print(a)
+                  quiz_progressbar(no_question,num_questions) 
         # Same procedure as in "movies" loop
         elif choose == "art":
           while no_question < num_questions:
@@ -177,12 +181,13 @@ while True:
               if answer == art_allq[no_question]["correct_choice"]:
                   count += 1
                   no_question += 1
-                  quiz_progressbar(no_question)
+                  quiz_progressbar(no_question,num_questions)
                   print(cs(f"\nGood job!You have {count} correct answer(s).\n", "green"))
               elif answer != art_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
+                  quiz_progressbar(no_question,num_questions)
                   try:
-                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
+                    help = yes_no("\nWould you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":
                       print(cs(art_allq[no_question]['hint'], "yellow"))
                     elif help == "no":
@@ -191,6 +196,7 @@ while True:
                       raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
                     print(a)
+                  quiz_progressbar(no_question,num_questions) 
         # The loop will break if user chooses to input "exit"
         elif choose == "exit":
           print(goodbye)

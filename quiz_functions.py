@@ -1,27 +1,5 @@
 from stringcolor import cs #importing one module from stringcolor, to change the color of text
 from progress.bar import FillingCirclesBar #to show how much progress user made through the quiz
-import csv
-import inquirer
-
-movies = open("movie_questions.csv", "r")
-datareader = csv.reader(movies)
-headers = next(datareader)
-questions = []
-for row in datareader:
-      question = {
-            'message': row[0],
-            'choices': [
-                row[1],
-                row[2],
-                row[3],
-                row[4]
-            ],
-            'correct_choice': row [5],
-            'hint': row[6]
-        }
-      questions.append(question)
-num_questions = len(questions) 
-movies.close()
 
 #function used in the app to take users input(choosing a topic)
 def user_input(topics,color):
@@ -49,13 +27,13 @@ def is_valid_input(message,color):
 
 
 # Function made for the progress bar
-def quiz_progressbar(no_question):
+def quiz_progressbar(question_no,numb_questions):
   # Passing two instance into the class FillinCirclesBar, text "Progress" and length  
-  bar = FillingCirclesBar("Progress",max = num_questions)
+  bar = FillingCirclesBar("Progress",max = numb_questions)
   # If statement, which makes bar progress if the current question number is less than the total
-  if no_question <=  num_questions:
+  if question_no <=  numb_questions:
     # Bar will progress by the number of the current question
-    bar.next(no_question)
+    bar.next(question_no)
 
 
 
