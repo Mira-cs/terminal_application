@@ -9,7 +9,7 @@ import inquirer
 # Importing pyfiglet to insert ASCII aty
 import pyfiglet
 # Importing two functions from quiz_functions file
-from quiz_functions import user_input,quiz_progressbar
+from quiz_functions import user_input,quiz_progressbar,yes_no
 
 # Opening file "movie_questions" and iterating over it,creating a list with dictionaries (key/value pairs)
 movies = open("movie_questions.csv", "r")
@@ -76,7 +76,8 @@ count = 0
 valid_options = ["movies", "literature", "art", "exit"]
 no_question = 0
 # Storing the greeting message (styled with pyfiglet package) in the variable "greeting"
-greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!")
+greeting = pyfiglet.figlet_format("Welcome to the Mutliple Choice Quiz!", font = "digital")
+goodbye = pyfiglet.figlet_format("Thank you!", font = "digital")
 # Storing the progress bar in the variable "bar"
 bar = FillingCirclesBar('Progress', max = num_questions)
 # Start of the app with greeting
@@ -120,16 +121,16 @@ while True:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   # Try/except block to display an Error message in case of invalid input
                   try: 
-                    help = input(cs("Would you like a hint and try again? (yes/no): ", "pink")).lower()
-                    # If statements in case of yes/no/invalid answers
-                    if help not in ["yes", "no"]:
-                      raise ValueError(cs("Invalid Answer", "red"))
+                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
                     # If user requests a hint, program will output it and go back to the question
                     if help == "yes":
                       print(cs(questions[no_question]['hint'], "yellow"))
                     # If user says no the hint, the program will move on to the next question
                     elif help == "no":
                       no_question += 1
+                    # In case of invalid input, the Error Message will appear
+                    else:
+                      raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
                     print(a)
         # Same procedure as in "movies" loop
@@ -152,13 +153,13 @@ while True:
               elif answer != literature_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   try:
-                    help = input(cs("Would you like a hint and try again? (yes/no): ","pink")).lower()
-                    if help not in ["yes","no"]:
-                      raise ValueError(cs("Invalid Answer","red"))
+                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":
                       print(cs(literature_allq[no_question]['hint'],"yellow"))
                     elif help == "no":
                       no_question += 1
+                    else:
+                      raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
                     print(a)
         # Same procedure as in "movies" loop
@@ -181,17 +182,18 @@ while True:
               elif answer != art_allq[no_question]['correct_choice']:
                   print(cs(f"\nWrong, you have {count} correct answer(s).\n", "red"))
                   try:
-                    help = input(cs("Would you like a hint and try again? (yes/no): ", "pink")).lower()
-                    if help not in ["yes", "no"]:
-                        raise ValueError(cs("Invalid Answer", "red"))
+                    help = yes_no("Would you like a hint and try again? (yes/no): ","pink")
                     if help == "yes":
                       print(cs(art_allq[no_question]['hint'], "yellow"))
                     elif help == "no":
                       no_question += 1
+                    else:
+                      raise ValueError(cs("Invalid Answer", "red"))
                   except ValueError as a:
                     print(a)
         # The loop will break if user chooses to input "exit"
         elif choose == "exit":
+          print(goodbye)
           break
         # When the inner loop is finished, the current question number and score count reset
         no_question = 0

@@ -1,6 +1,12 @@
-### Link to my repository: https://github.com/Mira-cs/terminal_application  
-## References (resources that helped me with the assignment)   
+### Link to my repository: https://github.com/Mira-cs/terminal_application 
+---------------------------------------------------------------- 
+## References (resources that helped me with the assignment)  
+A gentle introduction to testing with pytest (no date) A Gentle Introduction to Testing with PyTest - Bas codes. Available at: https://bas.codes/posts/python-pytest-introduction  
+Hira, Z. (2023) Bash scripting tutorial – linux shell script and command line for Beginners, freeCodeCamp.org. Available at: https://www.freecodecamp.org/news/bash-scripting-tutorial-linux-shell-script-and-command-line-for-beginners/  
+Working with CSV files in Python (2023) GeeksforGeeks. Available at: https://www.geeksforgeeks.org/working-csv-files-python/       
+Python enhancement proposals (no date) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/
 
+----------------------------------------------------------------
 ## Style guide 
 
 The style guide I followed: **PEP8** (for easier readability)   
@@ -12,9 +18,6 @@ The style guide I followed: **PEP8** (for easier readability)
 - Snake case used to declare variables
 - Surrounding functions with two blank lines    
 
-### Reference:   
-Python enhancement proposals (no date) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/ 
-
 ----------------------------------------------------------------
 ## A list of features of the terminal application (Quiz):
 - **Being able to choose topic and one options out of four presented**  
@@ -25,10 +28,10 @@ The program counts the number of questions the user did right, providing the ove
 User can also request a hint in case they are struggling.I created a separate hint file that is then imported into the python file, just like the quiz questions.So whenever user makes a wrong choice, the program will ask if they want a hint. If the hint isnt needed,the quiz will move on to the next question,if the user says "yes" to the hint, then the program will output a hint while going back to the previous question.
 - **Progress Bar**   
 User will be able to see what stage of the quiz they are at with the help of the Progress Bar.The percentage will be displayed in the progress bar, letting the user know how far along they are.
+----------------------------------------------------------------
 ## Implementation Plan  
 #### Link to my Trello board:   
 #### https://trello.com/b/aIu5ZHc6/terminal-application-ip
------------------------------------------------------------------
 ### Feature 1: May 5th - May 8th   
 **Giving user an opportunity to choose a topic from three available:**
 As I explained earlier, the quiz will give the user an opportunity to choose a topic for the quiz. To do so, I had to come up with three topics and questions for each.I used Excel to write down all the questions,options, hints and correct answers. Then I exported it into a CSV files.CSV files are then added to the same folder as the quiz.py file. Every file is opened and iterated over, creating lists and dictionaries inside them."Valid_options" variable is created. It contains strings reprenseting the options users can choose from (topics) and in case of invalid input, an Error message will be displayed.
@@ -72,7 +75,43 @@ Users are able to see how far along they are in the quiz with the help of the Pr
 2) Import progressbar package into the main file (not the entire package, but certain modules)
 3) Create a variable for the bar of a certain class and pass arguments to the function (message,length)
 4) Use appropriate function to make bar go up by 10% everytime the question is answered
-5) Reset the bar after the quiz is completed
+5) Reset the bar after the quiz is completed  
+----------------------------------------------------------------
+## Help Documentation  
+This section of the file contains instructions on how to operate the Multiple Choice Quiz terminal application.
+### Requirements
+Python 3 or higher is required  
+Git 
+### Installation Steps:
+1) Clone my GitHub repository from the following link:  
+https://github.com/Mira-cs/terminal_application
+2) Open terminal window
+3) Open the src folder 
+
+### Dependencies  
+
+blessed==1.20.0  
+colorama==0.4.6  
+Columnar==1.4.1  
+iniconfig==2.0.0  
+inquirer==3.1.3  
+packaging==23.1  
+pluggy==1.0.0  
+progress==1.6  
+prompt-toolkit==3.0.38  
+pyfiglet==0.8.post1  
+pytest==7.3.1  
+python-editor==1.0.4  
+readchar==4.0.5  
+six==1.16.0  
+string-color==1.2.3  
+toolz==0.12.0  
+wcwidth==0.2.6  
+
+### System/Hardware Requirements  
+
+
+### Command Line Arguments
 
 
 
