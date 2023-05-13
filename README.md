@@ -34,10 +34,10 @@ User will be able to see what stage of the quiz they are at with the help of the
 #### Link to my Trello board:   
 #### https://trello.com/b/aIu5ZHc6/terminal-application-ip  
 ### Pictures of my Trello Board:  
-!['Trello board screenshot'](./trello.png)  
-!['Trello board screenshot'](./trello1.png) 
-!['Trello board screenshot'](./trello2.png) 
-!['Trello board screenshot'](./trello3.png)
+!['Trello board screenshot'](https://i.ibb.co/3N1WF9y/trello.png)  
+!['Trello board screenshot'](https://i.ibb.co/TbdHNZN/trello1.png) 
+!['Trello board screenshot'](https://i.ibb.co/yQBFwhB/trello2.png) 
+!['Trello board screenshot'](https://i.ibb.co/JBRSFH5/trello3.png)
 
 ### Feature 1: May 5th - May 8th   
 **Giving user an opportunity to choose a topic from three available:**  
@@ -45,7 +45,7 @@ The quiz will give the user an opportunity to choose a topic for the quiz. To do
 
 **Checklist:**
 1) Creating three CSV files (movies,art,literature) with questions, options, correct answers and hints in them 
-2) Importing these files into the main file  (quiz.py)
+2) Importing CSV module into the main file  (quiz.py)
 3) Opening the files and making the program iterate over them and create dictionary
 4) Dictionaries are then passed in the list under corresponding variables with the append() function
 5) The headers of each CSV file is skipped (because it's the headline of the columns), files are closed
