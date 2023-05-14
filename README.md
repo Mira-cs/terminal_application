@@ -1,4 +1,5 @@
-### Link to my repository: https://github.com/Mira-cs/terminal_application 
+### Link to my repository: https://github.com/Mira-cs/terminal_application  
+### Link to my presentation: https://youtu.be/oQV4mxSbq2Q 
 ---------------------------------------------------------------- 
 ## References (resources that helped me with the assignment)  
 A gentle introduction to testing with pytest (no date) A Gentle Introduction to Testing with PyTest - Bas codes. Available at: https://bas.codes/posts/python-pytest-introduction  
