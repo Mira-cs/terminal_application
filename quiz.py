@@ -29,7 +29,7 @@ for row in datareader:
       'hint': row[6]
     }
     questions.append(question)
-num_questions = len(questions) 
+num_questions = len(questions)
 movies.close()
 # Opening file "literature_questions" and iterating over it,creating a list with dictionaries (key/value pairs)
 literature = open("literature_questions.csv", "r")
@@ -209,7 +209,7 @@ while True:
     
     
     
-    
+  
 
               
 
